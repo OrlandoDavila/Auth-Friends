@@ -15,7 +15,7 @@ componentDidMount() {
 
 getData = () => {
     axiosWithAuth()
-    .get('/api/friends')
+    .get('/friends/')
     .then(res=> {
         console.log(res.data)
         this.setState({
@@ -34,11 +34,11 @@ render() {
             <AddFriend />
             {this.state.friends.map(item => {
                 return (
-                    <>
+                    <div key={item.id}>
                     <h2>{item.name}</h2>
                     <h4>{item.age}</h4>
                     <h4>{item.email}</h4>
-                    </>
+                    </div>
                 )
             })}
         </div>

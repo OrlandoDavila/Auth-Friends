@@ -21,7 +21,7 @@ class AddFriend extends React.Component {
 
   submit = e => {
     axiosWithAuth()
-      .post('/api/friends', this.state.addFriend)
+      .post('http://localhost:5000/api/friends', this.state.addFriend)
       .then(res => {
         this.props.history.push('/protected');
       })
